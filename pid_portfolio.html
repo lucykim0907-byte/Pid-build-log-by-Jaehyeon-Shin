@@ -363,6 +363,7 @@ footer {
 <header>
   <div class="logo">VEX IQ // PID Build Log</div>
   <nav>
+    <a href="#video">Video</a>
     <a href="#specs">Specs</a>
     <a href="#pid">PID</a>
     <a href="#why">Why It Matters</a>
@@ -397,6 +398,20 @@ footer {
     </div>
   </div>
 </div>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="section-head">
+    <span class="section-index">00 / Demo</span>
+    <h2>Watch it drive</h2>
+  </div>
+  <div class="section-body wrap">
+    <video controls playsinline style="width:100%;max-width:720px;display:block;margin:0 auto;border-radius:4px;background:#000;">
+      <source src="KakaoTalk_Video_2026-07-18-13-20-22.mp4" type="video/mp4"/>
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
 
 <!-- SPECS -->
 <section id="specs">
@@ -484,22 +499,22 @@ footer {
   <div class="section-body wrap">
     <div class="why-grid">
       <div class="why-cell">
-        
+
         <h3>Autonomous is scored in millimeters</h3>
         <p>I've watched robots miss a game element by 4 cm in autonomous and lose the match by that margin. PID keeps positional error under <strong>20 mm</strong> on every run — that's the difference between picking up an object and driving past it.</p>
       </div>
       <div class="why-cell">
-        
+
         <h3>Battery voltage kills open-loop drives</h3>
         <p>A timed drive that works perfectly at 100% battery will stop <strong>10–15 cm short</strong> by your fifth match of the day. PID doesn't care — it reads encoders, not time, so it drives the same distance regardless of voltage.</p>
       </div>
       <div class="why-cell">
-        
+
         <h3>2° of drift = 35 mm off course</h3>
         <p>Over 1000 mm, a 2° heading error puts the robot almost 4 cm to the side. The gyro correction loop runs 50 times per second and trims left/right power in real time. <strong>The robot tracks straight</strong> even on rough tiles.</p>
       </div>
       <div class="why-cell">
-        
+
         <h3>One button, full autonomous — then back to driver</h3>
         <p>At the world level, you need both. My setup lets me drive manually with Left Arcade, hit a button to run a precise autonomous sequence, and the robot <strong>returns to manual control automatically</strong> when it's done.</p>
       </div>
