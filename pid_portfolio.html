@@ -13,6 +13,17 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>PID Drive — VEX IQ Build Log</title>
+<meta name="description" content="A full PID control system built for a VEX IQ robot — how it works, why it matters at Worlds, and everything that went wrong along the way. By Jae Hyeon, 3× VEX IQ World Championship competitor."/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="PID Drive — VEX IQ Build Log"/>
+<meta property="og:description" content="A full PID control system built for a VEX IQ robot — how it works, why it matters at Worlds, and everything that went wrong along the way."/>
+<meta property="og:image" content="https://lucykim0907-byte.github.io/Pid-build-log-by-Jaehyeon-Shin/og-image.png"/>
+<meta property="og:url" content="https://lucykim0907-byte.github.io/Pid-build-log-by-Jaehyeon-Shin/pid_portfolio.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="PID Drive — VEX IQ Build Log"/>
+<meta name="twitter:description" content="A full PID control system built for a VEX IQ robot — how it works, why it matters at Worlds, and everything that went wrong along the way."/>
+<meta name="twitter:image" content="https://lucykim0907-byte.github.io/Pid-build-log-by-Jaehyeon-Shin/og-image.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -372,6 +383,52 @@ pre {
 .cf  { color: #7EC8E3; }
 .cs  { color: #A8D4A8; }
 
+/* ── CONTACT ── */
+.contact-card { max-width: 640px; }
+.contact-lead { font-size: 15px; opacity: .65; margin-bottom: 24px; line-height: 1.6; }
+.contact-email {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 4px;
+  transition: opacity .2s;
+}
+.contact-email:hover { opacity: .65; }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── BACK TO TOP ── */
+.to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 200;
+  box-shadow: 0 4px 14px rgba(12,26,46,.25);
+}
+.to-top.show { opacity: .85; pointer-events: auto; transform: none; }
+.to-top:hover { opacity: 1; }
+
 /* ── FOOTER ── */
 footer {
   padding: 32px 40px;
@@ -411,6 +468,7 @@ footer {
     <a href="#why" data-i18n="nav-why">Why It Matters</a>
     <a href="#tuning" data-i18n="nav-tuning">Tuning</a>
     <a href="#code" data-i18n="nav-code">Code</a>
+    <a href="#contact" data-i18n="nav-contact">Contact</a>
   </nav>
   <div class="lang-switch">
     <button class="lang-btn" data-lang="ko" onclick="setLang('ko')">한국어</button>
@@ -420,7 +478,7 @@ footer {
 </header>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero reveal">
   <div>
     <p class="hero-kicker" data-i18n="hero-kicker">Autonomous Control System — VEX IQ 2nd Gen</p>
     <h1 data-i18n="hero-h1">Drive straight.<br/>Turn precise.<br/><em>Win matches.</em></h1>
@@ -447,7 +505,7 @@ footer {
 </div>
 
 <!-- VIDEO -->
-<section id="video">
+<section id="video" class="reveal">
   <div class="section-head">
     <span class="section-index" data-i18n="video-index">00 / Demo</span>
     <h2 data-i18n="video-h2">Watch it drive</h2>
@@ -461,7 +519,7 @@ footer {
 </section>
 
 <!-- SPECS -->
-<section id="specs">
+<section id="specs" class="reveal">
   <div class="section-head">
     <span class="section-index" data-i18n="specs-index">01 / Hardware</span>
     <h2 data-i18n="specs-h2">What the robot is made of</h2>
@@ -484,7 +542,7 @@ footer {
 </section>
 
 <!-- PID PRINCIPLE -->
-<section id="pid">
+<section id="pid" class="reveal">
   <div class="section-head">
     <span class="section-index" data-i18n="pid-index">02 / Control Theory</span>
     <h2 data-i18n="pid-h2">How PID actually works</h2>
@@ -538,7 +596,7 @@ footer {
 </section>
 
 <!-- WHY PID -->
-<section id="why">
+<section id="why" class="reveal">
   <div class="section-head">
     <span class="section-index" data-i18n="why-index">03 / Competition</span>
     <h2 data-i18n="why-h2">Why this matters at worlds</h2>
@@ -573,7 +631,7 @@ footer {
 </section>
 
 <!-- TUNING -->
-<section id="tuning">
+<section id="tuning" class="reveal">
   <div class="section-head">
     <span class="section-index" data-i18n="tuning-index">04 / Development</span>
     <h2 data-i18n="tuning-h2">Everything that went wrong</h2>
@@ -629,7 +687,7 @@ footer {
 </section>
 
 <!-- CODE -->
-<section id="code">
+<section id="code" class="reveal">
   <div class="section-head">
     <span class="section-index" data-i18n="code-index">05 / Source</span>
     <h2 data-i18n="code-h2">The actual code</h2>
@@ -761,16 +819,32 @@ footer {
   </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <div class="section-head">
+    <span class="section-index" data-i18n="contact-index">06 / Contact</span>
+    <h2 data-i18n="contact-h2">Get in touch</h2>
+  </div>
+  <div class="section-body wrap">
+    <div class="contact-card">
+      <p class="contact-lead" data-i18n="contact-lead">Questions about the build, the code, or VEX IQ in general? Reach out.</p>
+      <a class="contact-email" href="mailto:lucykim0907@gmail.com">lucykim0907@gmail.com</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <span data-i18n="footer-title">VEX IQ PID Build Log</span>
   <span data-i18n="footer-made">Made by Jae Hyeon</span>
   <span>C++ · VEXcode IQ · 2nd Gen Brain</span>
 </footer>
 
+<button class="to-top" id="toTopBtn" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
 const translations = {
   en: {
-    "nav-video":"Video","nav-specs":"Specs","nav-pid":"PID","nav-why":"Why It Matters","nav-tuning":"Tuning","nav-code":"Code",
+    "nav-video":"Video","nav-specs":"Specs","nav-pid":"PID","nav-why":"Why It Matters","nav-tuning":"Tuning","nav-code":"Code","nav-contact":"Contact",
     "hero-kicker":"Autonomous Control System — VEX IQ 2nd Gen",
     "hero-h1":"Drive straight.<br/>Turn precise.<br/><em>Win matches.</em>",
     "hero-body":"I built a full PID control system for my VEX IQ robot — not because I had to, but because open-loop driving lost me matches I should have won. This documents what I built, why it works, and everything that went wrong first.",
@@ -810,10 +884,11 @@ const translations = {
     "t5-title":"driveStraightMM(1000) always stopped at ~985 mm","t5-body":"Friction was absorbing the last 15 mm of travel. Adding ki caused oscillation. Instead, I multiplied the target by 1.05 — the robot aims for 1050 mm and lands on 1000 after friction losses. Simple and stable.",
     "code-index":"05 / Source","code-h2":"The actual code",
     "code1-filename":"PIDController struct","code2-filename":"driveStraightMM() — dual loop","code3-filename":"turnDeg() — gyro PID","code4-filename":"main() — manual ↔ PID",
+    "contact-index":"06 / Contact","contact-h2":"Get in touch","contact-lead":"Questions about the build, the code, or VEX IQ in general? Reach out.",
     "footer-title":"VEX IQ PID Build Log","footer-made":"Made by Jae Hyeon"
   },
   ko: {
-    "nav-video":"영상","nav-specs":"사양","nav-pid":"PID","nav-why":"왜 중요한가","nav-tuning":"튜닝","nav-code":"코드",
+    "nav-video":"영상","nav-specs":"사양","nav-pid":"PID","nav-why":"왜 중요한가","nav-tuning":"튜닝","nav-code":"코드","nav-contact":"연락처",
     "hero-kicker":"자율주행 제어 시스템 — VEX IQ 2세대",
     "hero-h1":"직진은 곧게.<br/>회전은 정밀하게.<br/><em>경기는 승리로.</em>",
     "hero-body":"VEX IQ 로봇을 위한 완전한 PID 제어 시스템을 만들었습니다 — 꼭 해야 해서가 아니라, 오픈루프 주행 때문에 이겼어야 할 경기를 놓쳤기 때문입니다. 무엇을 만들었는지, 왜 작동하는지, 그리고 처음에 무엇이 잘못됐는지를 기록합니다.",
@@ -853,10 +928,11 @@ const translations = {
     "t5-title":"driveStraightMM(1000)이 항상 약 985mm에서 멈췄다","t5-body":"마찰이 이동 거리의 마지막 15mm를 흡수하고 있었습니다. ki를 추가하니 진동이 발생했습니다. 대신 목표값에 1.05를 곱했습니다 — 로봇은 1050mm를 목표로 하고 마찰 손실 후 1000mm에 도달합니다. 간단하고 안정적입니다.",
     "code-index":"05 / 소스코드","code-h2":"실제 코드",
     "code1-filename":"PIDController 구조체","code2-filename":"driveStraightMM() — 이중 루프","code3-filename":"turnDeg() — 자이로 PID","code4-filename":"main() — 수동 ↔ PID",
+    "contact-index":"06 / 연락처","contact-h2":"연락하기","contact-lead":"빌드나 코드, VEX IQ에 대해 궁금한 점이 있으면 언제든 연락 주세요.",
     "footer-title":"VEX IQ PID 빌드 로그","footer-made":"제작: Jae Hyeon"
   },
   zh: {
-    "nav-video":"视频","nav-specs":"规格","nav-pid":"PID","nav-why":"为何重要","nav-tuning":"调参","nav-code":"代码",
+    "nav-video":"视频","nav-specs":"规格","nav-pid":"PID","nav-why":"为何重要","nav-tuning":"调参","nav-code":"代码","nav-contact":"联系方式",
     "hero-kicker":"自主控制系统 — VEX IQ 第二代",
     "hero-h1":"直线要直。<br/>转弯要准。<br/><em>赢得比赛。</em>",
     "hero-body":"我为我的 VEX IQ 机器人构建了一套完整的 PID 控制系统——不是因为不得不做，而是因为开环驾驶让我输掉了本该赢的比赛。这里记录了我构建了什么、为什么有效，以及最初出的所有问题。",
@@ -896,6 +972,7 @@ const translations = {
     "t5-title":"driveStraightMM(1000) 总是在约 985 毫米处停下","t5-body":"摩擦力吸收了最后 15 毫米的行程。加入 ki 会导致震荡。于是我把目标值乘以 1.05——机器人以 1050 毫米为目标，摩擦损耗后正好停在 1000 毫米。简单又稳定。",
     "code-index":"05 / 源代码","code-h2":"实际代码",
     "code1-filename":"PIDController 结构体","code2-filename":"driveStraightMM() — 双环","code3-filename":"turnDeg() — 陀螺仪 PID","code4-filename":"main() — 手动 ↔ PID",
+    "contact-index":"06 / 联系方式","contact-h2":"联系我","contact-lead":"对构建过程、代码或 VEX IQ 有任何疑问，欢迎联系我。",
     "footer-title":"VEX IQ PID 构建日志","footer-made":"制作：Jae Hyeon"
   }
 };
@@ -923,6 +1000,33 @@ function setLang(lang){
     else saved = 'en';
   }
   setLang(saved);
+})();
+
+// scroll reveal
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('visible'); });
+  }
+})();
+
+// back to top button
+(function(){
+  var btn = document.getElementById('toTopBtn');
+  if (!btn) return;
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('show', window.scrollY > 480);
+  }, { passive: true });
 })();
 </script>
 
