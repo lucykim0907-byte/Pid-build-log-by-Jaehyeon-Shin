@@ -387,8 +387,8 @@ pre {
 .cs  { color: #A8D4A8; }
 
 /* ── CODE CTA ── */
+.code-cta-stack { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
 .code-cta {
-  margin-top: 8px;
   background: #0D2137;
   color: var(--paper);
   border-radius: 4px;
@@ -425,6 +425,7 @@ pre {
   white-space: nowrap;
 }
 .code-cta-btn:hover { opacity: .85; }
+.code-cta-btn.alt { background: var(--blue); color: var(--paper); }
 @media(max-width: 768px){
   .code-cta { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
   .code-cta-btn { width: 100%; text-align: center; }
@@ -863,13 +864,24 @@ footer {
 }</pre>
     </div>
 
-    <div class="code-cta">
-      <div>
-        <p class="code-cta-eyebrow" data-i18n="code-cta-eyebrow">Want the whole thing?</p>
-        <h3 data-i18n="code-cta-title">Full source + 20-min video lecture</h3>
-        <p class="code-cta-body" data-i18n="code-cta-body">Every file above, fully commented — plus a full video walkthrough of the PID theory, a line-by-line code breakdown, 5 real bugs I hit while building it, and a slide deck to keep as a reference.</p>
+    <div class="code-cta-stack">
+      <div class="code-cta">
+        <div>
+          <p class="code-cta-eyebrow" data-i18n="code-cta-eyebrow">Want the whole thing?</p>
+          <h3 data-i18n="code-cta-title">Full source + 20-min video lecture</h3>
+          <p class="code-cta-body" data-i18n="code-cta-body">Every file above, fully commented — plus a full video walkthrough of the PID theory, a line-by-line code breakdown, 5 real bugs I hit while building it, and a slide deck to keep as a reference.</p>
+        </div>
+        <a class="code-cta-btn" href="https://lucykim2.gumroad.com/l/pid-full-code" target="_blank" rel="noopener noreferrer" data-i18n="code-cta-btn">Get it on Gumroad — $9.99</a>
       </div>
-      <a class="code-cta-btn" href="https://lucykim2.gumroad.com/l/pid-full-code" target="_blank" rel="noopener noreferrer" data-i18n="code-cta-btn">Get it on Gumroad — $9.99</a>
+
+      <div class="code-cta">
+        <div>
+          <p class="code-cta-eyebrow" data-i18n="code-cta2-eyebrow">Building your own portfolio?</p>
+          <h3 data-i18n="code-cta2-title">VEX Engineering Portfolio Website Template</h3>
+          <p class="code-cta-body" data-i18n="code-cta2-body">The exact site structure you're looking at right now — one self-contained HTML file, 7 sections already laid out, every editable spot marked. Drop in your own robot's specs and build story.</p>
+        </div>
+        <a class="code-cta-btn alt" href="https://lucykim2.gumroad.com/l/vex-portfolio-template" target="_blank" rel="noopener noreferrer" data-i18n="code-cta2-btn">Get the template — $4.99</a>
+      </div>
     </div>
 
   </div>
@@ -943,6 +955,9 @@ const translations = {
     "code-cta-eyebrow":"Want the whole thing?","code-cta-title":"Full source + 20-min video lecture",
     "code-cta-body":"Every file above, fully commented — plus a full video walkthrough of the PID theory, a line-by-line code breakdown, 5 real bugs I hit while building it, and a slide deck to keep as a reference.",
     "code-cta-btn":"Get it on Gumroad — $9.99",
+    "code-cta2-eyebrow":"Building your own portfolio?","code-cta2-title":"VEX Engineering Portfolio Website Template",
+    "code-cta2-body":"The exact site structure you're looking at right now — one self-contained HTML file, 7 sections already laid out, every editable spot marked. Drop in your own robot's specs and build story.",
+    "code-cta2-btn":"Get the template — $4.99",
     "contact-index":"06 / Contact","contact-h2":"Get in touch","contact-lead":"Questions about the build, the code, or VEX IQ in general? Reach out.",
     "footer-title":"VEX IQ PID Build Log","footer-made":"Made by Jae Hyeon"
   },
@@ -990,6 +1005,9 @@ const translations = {
     "code-cta-eyebrow":"전체 코드가 필요하다면?","code-cta-title":"전체 소스코드 + 20분 영상 강의",
     "code-cta-body":"위 코드 전체를 상세한 주석과 함께 제공하고, PID 이론 설명부터 코드 한 줄 한 줄 해설, 실제로 겪은 5가지 버그와 해결 과정, 참고용 슬라이드까지 담은 영상 강의를 드립니다.",
     "code-cta-btn":"Gumroad에서 구매 — $9.99",
+    "code-cta2-eyebrow":"포트폴리오 사이트가 필요하다면?","code-cta2-title":"VEX 엔지니어링 포트폴리오 웹사이트 템플릿",
+    "code-cta2-body":"지금 보고 있는 이 사이트와 동일한 구조 — 파일 하나로 된 HTML, 7개 섹션이 미리 구성돼 있고, 수정할 부분마다 표시가 돼있어요. 본인 로봇 스펙과 빌드 스토리만 채워넣으면 돼요.",
+    "code-cta2-btn":"템플릿 구매 — $4.99",
     "contact-index":"06 / 연락처","contact-h2":"연락하기","contact-lead":"빌드나 코드, VEX IQ에 대해 궁금한 점이 있으면 언제든 연락 주세요.",
     "footer-title":"VEX IQ PID 빌드 로그","footer-made":"제작: Jae Hyeon"
   },
@@ -1037,6 +1055,9 @@ const translations = {
     "code-cta-eyebrow":"想要完整代码？","code-cta-title":"完整源代码 + 20分钟视频讲解",
     "code-cta-body":"提供上面所有代码的完整注释版本，外加一段完整视频讲解：PID 理论、逐行代码解析、我在开发过程中遇到的 5 个真实 bug 及修复方法，以及可保留参考的幻灯片。",
     "code-cta-btn":"在 Gumroad 购买 — $9.99",
+    "code-cta2-eyebrow":"需要一个作品集网站？","code-cta2-title":"VEX 工程作品集网站模板",
+    "code-cta2-body":"就是你现在看到的这个网站结构——单个 HTML 文件，已经搭好 7 个板块，每个可编辑的地方都有标注。填入你自己的机器人参数和搭建故事即可。",
+    "code-cta2-btn":"购买模板 — $4.99",
     "contact-index":"06 / 联系方式","contact-h2":"联系我","contact-lead":"对构建过程、代码或 VEX IQ 有任何疑问，欢迎联系我。",
     "footer-title":"VEX IQ PID 构建日志","footer-made":"制作：Jae Hyeon"
   }
